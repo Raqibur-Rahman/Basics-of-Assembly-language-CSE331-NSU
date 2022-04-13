@@ -2,7 +2,6 @@
 .stack 100h
 .code    
        
-       
 ;To print output, we have to put 2 in AH
 ;Output will be stored in the data segment(in dl or dh).
        
