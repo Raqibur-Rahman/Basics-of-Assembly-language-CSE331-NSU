@@ -1,0 +1,35 @@
+
+include 'emu8086.inc'
+.model small
+.stack 100h 
+.data 
+msg db 'Factorial of 5 : ',0
+
+.code  
+
+mov ax,@data
+mov ds,ax 
+lea si, msg 
+call print_string 
+
+mov cl,5
+mov al,1
+
+fact:
+mul cl 
+dec cl
+cmp cl,1
+jne fact 
+
+call print_num 
+
+mov ah,4ch
+int 21h
+
+define_print_num
+define_print_num_uns  
+define_print_string 
+
+
+
+  
